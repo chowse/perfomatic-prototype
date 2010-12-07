@@ -45,8 +45,49 @@ a:hover {
 
 
 #header {
-	background: -moz-linear-gradient(-90deg, #1f62aa, #164183);
+	background: -moz-linear-gradient(-90deg, #306298, #234375);
 }
+	#header h1 {
+		display: inline;
+		left: 0;
+		top: 0;
+		bottom: 0;
+	}
+		#header h1 a {
+			position: absolute;
+			left: 15px;
+			top: 0;
+			width: 400px;
+			height: 100%;
+			background: url(title.png) no-repeat 0 center;
+		}
+		#header h1 span {
+			position: absolute;
+			width: 0;
+			height: 0;
+			overflow: hidden;
+		}
+	#header nav {
+		position: absolute;
+		right: 15px;
+		height: 100%;
+	}
+		#header nav a {
+			display: inline-block;
+			padding: 0 1em;
+			font-size: 14px;
+			line-height: 49px;
+			color: #b3cdff;
+			text-shadow: 0 1px 0 rgba(0,0,0, 1);
+			text-decoration: none;
+		}
+		#header nav a:hover,
+		#header nav a.selected {
+			color: #fff;
+		}
+		#header nav a.selected {
+			background: url(hd.png) no-repeat center bottom;
+		}
 
 
 #options {
