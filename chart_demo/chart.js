@@ -471,5 +471,30 @@
 		return false;
 	});
 	
+	$('#add-series').click(function (e) {
+		$('#add-overlay')
+			.css({ opacity: 0, display: 'table' })
+			.animate({ opacity: 1 }, 250);
+		return false;
+	});
+	
+	$('#add-overlay').click(function (e) {
+		if ($(e.target).closest('#add-data').length == 0) {
+			$(this).animate({ opacity: 'hide' }, 250);
+			return false;
+		}
+	});
+	
+	$('#add-data').submit(function (e) {
+		$('#add-overlay').animate({ opacity: 'hide' }, 250);
+		return false;
+	});
+	
+	$('#add-data-cancel').click(function (e) {
+		$('#add-data').get(0).reset();
+		$('#add-overlay').animate({ opacity: 'hide' }, 250);
+		return false;
+	});
+	
 
 })(jQuery);
