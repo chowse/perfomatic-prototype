@@ -16,6 +16,43 @@
 		
 		return this;
 	};
+	
+	
+	$.fn.showBubble = function(anchor) {
+		anchor = $(anchor);
+		var offset = anchor.offset(),
+		    w = anchor.outerWidth(),
+		    h = anchor.outerHeight(),
+		    bubbleWrap = this.find('.bubble-wrap');
+		
+		bubbleWrap.css({ left: offset.left+w/2, top: offset.top+h });
+		
+		return this
+			.bind('click.bubble', onClickBubble)
+			.bind('copy.bubble', onCopyBubble)
+			.show();
+		
+		function onClickBubble(e) {
+			if ( bubbleWrap.has(e.target).length == 0 ) {
+				$(this).hideBubble();
+				return false;
+			}
+		}
+		
+		function onCopyBubble(e) {
+			if ( $(e.target).closest('input,textarea').length ) {
+				var self = $(this);
+				setTimeout(function() { self.hideBubble(); }, 100);
+			}
+		}
+	};
+
+	$.fn.hideBubble = function(anchor) {
+		return this
+			.unbind('click.bubble')
+			.unbind('copy.bubble')
+			.hide();
+	};
 
 
 	var COLORS = [ '#e7454c', '#6dba4b', '#4986cf', '#f5983d', '#884e9f', '#bf5c41', '#e7454c' ]
@@ -496,5 +533,22 @@
 		return false;
 	});
 	
+	
+	$('#chart-link').click(function() {
+		$('#link-overlay').showBubble(this);
+		$('#link-url').val('').addClass('loading');
+		setTimeout(function() {
+			$('#link-url')
+				.removeClass('loading').val('http://mzl.la/8E9Jk2')
+				.focus().select();
+		}, 500);
+		return false;
+	});
+	
+	$('#chart-embed').click(function() {
+		$('#embed-overlay').showBubble(this);
+		$('#embed-code').focus().select();
+		return false;
+	});
 
 })(jQuery);

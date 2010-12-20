@@ -580,3 +580,74 @@ a:hover {
 			background: -moz-linear-gradient(#ffffff, #ededed);
 			color: #ccc;
 		}
+		
+.bubble-overlay {
+	display: none;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 1000;
+}
+	.bubble-overlay .bubble-wrap {
+		position: absolute;
+		width: 0;
+		height: 0;
+	}
+	.bubble-overlay .bubble {
+		position: absolute;
+		left: -150px;
+		top: 0;
+		width: 300px;
+		color: #fff;
+		font-size: 14px;
+	}
+		.bubble-overlay .bubble .stem {
+			display: block;
+			width: 0;
+			height: 0;
+			margin: 0 auto;
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-bottom: 10px solid rgba(0,0,0,.75);
+		}
+		.bubble-overlay .bubble .content {
+			padding: 10px 15px;
+			border-radius: 6px;
+			background: rgba(0,0,0,.75);
+		}
+		.bubble-overlay .bubble label {
+			display: block;
+			margin-bottom: 5px;
+			font-size: 11px;
+		}
+		.bubble-overlay .bubble input,
+		.bubble-overlay .bubble textarea {
+			width: 100%;
+			padding: 0;
+			border: 0;
+			font: inherit;
+			font-size: 14px;
+			background: transparent;
+			color: inherit;
+		}
+		.bubble-overlay .bubble textarea {
+			overflow: hidden;
+			resize: none;
+		}
+		.bubble-overlay .bubble input::-moz-selection,
+		.bubble-overlay .bubble textarea::-moz-selection {
+			background: #0061d0;
+			color: #fff;
+		}
+		
+#link-overlay {
+}
+	#link-overlay .bubble {
+		width: 200px;
+		left: -100px;
+	}
+	#link-overlay .bubble input.loading {
+		background: url(loading-url.gif) no-repeat left center;
+	}
