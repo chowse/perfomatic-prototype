@@ -31,6 +31,8 @@ a:hover {
 #header, #toolbar, #options, #charts {
 	position: absolute;
 	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 	border: 0 solid #000;
 }
 
@@ -46,6 +48,7 @@ a:hover {
 
 #header {
 	background: -moz-linear-gradient(-90deg, #306298, #234375);
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#306298), to(#234375));
 }
 	#header h1 {
 		display: inline;
@@ -99,6 +102,7 @@ a:hover {
 
 #toolbar {
 	background: -moz-linear-gradient(-90deg, #f8f8f8, #e7e7e7);
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#f8f8f8), to(#e7e7e7));
 	border-bottom-color: #d0d0d0;
 	padding: 0 10px;
 	line-height: 36px;
@@ -117,8 +121,11 @@ a:hover {
 		border: 1px solid #ccc;
 		border-left-width: 0;
 		background: -moz-linear-gradient(-90deg, #fff, #eee);
+		background: -webkit-gradient(linear, 0 0, 0 bottom, from(#fff), to(#eee));
 		padding: 4px 8px;
 		-moz-box-shadow: 0 1px 0 rgba(255,255,255,.5);
+		-webkit-box-shadow: 0 1px 0 rgba(255,255,255,.5);
+		box-shadow: 0 1px 0 rgba(255,255,255,.5);
 		text-shadow: 0 1px 0 rgba(255,255,255,.5);
 		text-decoration: none;
 	}
@@ -130,17 +137,27 @@ a:hover {
 		border-left-width: 1px;
 		-moz-border-radius-topleft: 4px;
 		-moz-border-radius-bottomleft: 4px;
+		-webkit-border-radius-topleft: 4px;
+		-webkit-border-radius-bottomleft: 4px;
+		border-radius-topleft: 4px;
+		border-radius-bottomleft: 4px;
 	}
 	#toolbar .button:last-child {
 		-moz-border-radius-topright: 4px;
 		-moz-border-radius-bottomright: 4px;
+		-webkit-border-radius-topright: 4px;
+		-webkit-border-radius-bottomright: 4px;
+		border-radius-topright: 4px;
+		border-radius-bottomright: 4px;
 	}
 	#toolbar .button:hover,
 	#toolbar .button.sbFocus {
 		background: -moz-linear-gradient(-90deg, #fff, #d1dff0);
+		background: -webkit-gradient(linear, 0 0, 0 bottom, from(#fff), to(#d1dff0));
 	}
 	#toolbar .button:active {
 		background: -moz-linear-gradient(-90deg, #c4d0e0, #d1dff0);
+		background: -webkit-gradient(linear, 0 0, 0 bottom, from(#c4d0e0), to(#d1dff0));
 	}
 		#toolbar .button .key {
 			position: relative;
@@ -150,6 +167,7 @@ a:hover {
 			background: rgba(0,0,0,.125);
 			font-size: 9px;
 			-moz-border-radius: 2px;
+			border-radius: 2px;
 		}
 
 
@@ -160,6 +178,8 @@ a:hover {
 	background: #fff;
 	border: 1px solid #cdd6df;
 	-moz-box-shadow: 0 1px 0 #fff;
+	-webkit-box-shadow: 0 1px 0 #fff;
+	box-shadow: 0 1px 0 #fff;
 }
 	#legend li {
 		position: relative;
@@ -332,6 +352,7 @@ a:hover {
 		background: rgba(0,0,0,.75);
 		color: #fff;
 		-moz-border-radius: 5px;
+		border-radius: 5px;
 		padding: 10px 15px;
 	}
 	#tooltip.locked .body {
@@ -389,6 +410,7 @@ a:hover {
 		background: #000 url(loading.gif) no-repeat center 20px;
 		opacity: .75;
 		-moz-border-radius: 5px;
+		border-radius: 5px;
 	}
 	#loading-overlay span {
 		position: absolute;
@@ -414,6 +436,7 @@ a:hover {
 		background: rgba(85,0,0, .75) url(error.png) no-repeat 10px 10px;
 		color: #fff;
 		-moz-border-radius: 5px;
+		border-radius: 5px;
 		margin-bottom: 5px;
 	}
 		#errors .error h3 {
@@ -479,6 +502,10 @@ a:hover {
 		text-align: left;
 		-moz-box-shadow: 0 2px 0 #0a2040,
 		                 0 2px 4px rgba();
+		-webkit-box-shadow: 0 2px 0 #0a2040,
+		                    0 2px 4px rgba();
+		box-shadow: 0 2px 0 #0a2040,
+		            0 2px 4px rgba();
 	}
 	#add-overlay h2 {
 		font-size: 24px;
@@ -548,6 +575,7 @@ a:hover {
 			-moz-border-radius: 3px;
 			border-radius: 3px;
 			background: -moz-linear-gradient(#ffffff, #ededed);
+			background: -webkit-gradient(linear, 0 0, 0 bottom, from(#ffffff), to(#ededed));
 			cursor: pointer;
 		}
 		#add-overlay button:hover,
@@ -557,6 +585,8 @@ a:hover {
 		}
 		#add-overlay button:active {
 			-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.2);
+			-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.2);
+			box-shadow: inset 0 1px 1px rgba(0,0,0,.2);
 		}
 			#add-overlay button:active span {
 				position: relative;
@@ -564,6 +594,7 @@ a:hover {
 			}
 		#add-overlay button[type="submit"] {
 			background: -moz-linear-gradient(#4b83c1, #426ca6);
+			background: -webkit-gradient(linear, 0 0, 0 bottom, from(#4b83c1), to(#426ca6));
 			border-color: #273f6c;
 			color: #fff;
 		}
@@ -578,6 +609,7 @@ a:hover {
 		#add-overlay button[type="submit"]:disabled {
 			border-color: #d0d0d0;
 			background: -moz-linear-gradient(#ffffff, #ededed);
+			background: -webkit-gradient(linear, 0 0, 0 bottom, from(#ffffff), to(#ededed));
 			color: #ccc;
 		}
 		
@@ -638,6 +670,11 @@ a:hover {
 		}
 		.bubble-overlay .bubble input::-moz-selection,
 		.bubble-overlay .bubble textarea::-moz-selection {
+			background: #0061d0;
+			color: #fff;
+		}
+		.bubble-overlay .bubble input::selection,
+		.bubble-overlay .bubble textarea::selection {
 			background: #0061d0;
 			color: #fff;
 		}
